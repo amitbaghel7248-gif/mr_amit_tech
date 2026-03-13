@@ -6,7 +6,7 @@ st.set_page_config(page_title="Consumer Search", layout="centered")
 st.title("Genus Daily Billing Status")
 
 # data load
-df = pd.read_csv(r"D:\billing_form\data_for_web_from.csv")
+df = pd.read_csv("data_for_web_from.csv")
 
 search = st.text_input("**Search WFM_CONSUMER_NO / CCB_ACCT_ID / CCB_METER_NO**")
 # st.markdown("**Search Consumer Number / RMS ACC / RMS MTR**")

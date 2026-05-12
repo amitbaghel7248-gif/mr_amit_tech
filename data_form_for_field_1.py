@@ -112,3 +112,16 @@ if search:
     
     else:
         st.error("Record Not Found")
+
+st.markdown(
+    """
+    <div style='text-align: right;
+                color: gray;
+                font-size: 14px;
+                margin-top: 40px;'>
+        Designed by <b>Mr Amit</b>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+

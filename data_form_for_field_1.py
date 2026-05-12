@@ -58,7 +58,7 @@ if search:
         st.text_input("WFM_METER_NO", row["Scan New Meter Serial No"], disabled=True, label_visibility="collapsed")
 
         st.markdown("**CCB_ACCT_ID**")
-        st.text_input("CCB_ACCT_ID", row["ACCT_ID"], disabled=True, label_visibility="collapsed")
+        st.text_input("CCB_ACCT_ID", str(row["ACCT_ID"]).replace(".0", ""), disabled=True, label_visibility="collapsed")
 
         # st.markdown("**CCB_ACCT_ID**")
         # st.text_input("CCB_ACCT_ID", int(row["ACCT_ID"]), disabled=True, label_visibility="collapsed")
@@ -70,7 +70,7 @@ if search:
         st.text_input("CCB_METER_BADGE_NO", row["METER_BADGE_NO"], disabled=True, label_visibility="collapsed")
 
         st.markdown("**CCB_LOAD_IN_KW**")
-        st.text_input("CCB_LOAD_IN_KW", row["LOAD_IN_KW"], disabled=True, label_visibility="collapsed")
+        st.text_input("CCB_LOAD_IN_KW", str(row["LOAD_IN_KW"]).replace(".0", ""), disabled=True, label_visibility="collapsed")
 
         st.markdown("**L1_STATUS**")
         st.text_input("L1_STATUS", row["L1 Approval Status"], disabled=True, label_visibility="collapsed")

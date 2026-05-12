@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import rarfile
+import zipfile
 
 st.set_page_config(page_title="Consumer Search", layout="centered")
 
@@ -9,14 +9,14 @@ st.title("Genus Daily Billing Status")
 # =========================================
 # READ CSV FROM RAR
 # =========================================
-rar_path = r"D:\billing_form\data_for_web_from.rar"
+rar_path = r"D:\billing_form\data_for_web_from.zip"
 
-with rarfile.RarFile(rar_path) as rf:
+with zipfile.ZipFile(zip_path) as z:
+    
+    csv_file = z.namelist()[0]
 
-    csv_file = rf.namelist()[0]
-
-    with rf.open(csv_file) as f:
-
+    with z.open(csv_file) as f:
+        
         df = pd.read_csv(f, low_memory=False)
 
 

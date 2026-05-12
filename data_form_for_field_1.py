@@ -26,11 +26,13 @@ search = st.text_input("**Search WFM_CONSUMER_NO/ WFM_METER_NO / CCB_ACCT_ID / C
 
 if search:
 
+    search = str(search).strip()
+
     result = df[
-        df["Consumer Number"].astype(str).str.contains(search) |
-        df["Scan New Meter Serial No"].astype(str).str.contains(search) |
-        df["ACCT_ID"].astype(str).str.contains(search) |
-        df["METER_BADGE_NO"].astype(str).str.contains(search)
+        (df["Consumer Number"].astype(str).str.strip() == search) |
+        (df["Scan New Meter Serial No"].astype(str).str.strip() == search) |
+        (df["ACCT_ID"].astype(str).str.strip() == search) |
+        (df["METER_BADGE_NO"].astype(str).str.strip() == search)
     ]
 
     if not result.empty:
